@@ -70,8 +70,8 @@ class Student
     WHERE grade = 10
     LIMIT 1
     SQL
-    #binding.pry
-    DB[:conn].execute(sql).collect {|row| row}
+    binding.pry
+    DB[:conn].execute(sql).collect {|row| row}.first[1]
   end
 
   def save
