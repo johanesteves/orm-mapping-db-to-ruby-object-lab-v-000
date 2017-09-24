@@ -70,7 +70,7 @@ class Student
     WHERE grade = 10
     LIMIT ?
     SQL
-
+    binding.pry
     DB[:conn].execute(sql, num).collect {|row| row}
   end
 
