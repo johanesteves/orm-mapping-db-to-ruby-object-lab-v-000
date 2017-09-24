@@ -70,8 +70,15 @@ class Student
     WHERE grade = 10
     LIMIT 1
     SQL
-    binding.pry
     self.find_by_name(DB[:conn].execute(sql).collect {|row| row}.first[1])
+  end
+
+  def self.all_students_in_grade_X(grade)
+    sql = <<-SQL
+    SELECT * FROM students
+    WHERE grade = ?
+    SQL
+    DB[:conn].execute(sql, grade).collect {|row| row}
   end
 
   def save
