@@ -68,7 +68,6 @@ class Student
     sql = <<-SQL
     SELECT * FROM students
     WHERE grade = 10
-    LIMIT ?
     SQL
     binding.pry
     DB[:conn].execute(sql).collect {|row| row}
