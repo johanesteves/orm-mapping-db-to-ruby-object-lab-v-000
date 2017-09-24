@@ -71,7 +71,7 @@ class Student
     LIMIT ?
     SQL
     binding.pry
-    DB[:conn].execute(sql, num).collect {|row| row}
+    DB[:conn].execute(sql).collect {|row| row}
   end
 
   def save
