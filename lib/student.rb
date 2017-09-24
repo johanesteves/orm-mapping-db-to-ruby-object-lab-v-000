@@ -71,7 +71,7 @@ class Student
     LIMIT 1
     SQL
     binding.pry
-    DB[:conn].execute(sql).collect {|row| row}.first[1]
+    self.find_by_name(DB[:conn].execute(sql).collect {|row| row}.first[1])
   end
 
   def save
